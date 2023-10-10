@@ -18,11 +18,11 @@ namespace Lab2.Controllers
         [HttpPost]
         public IActionResult BirthResult([FromForm] Birth model)
         {
-            if (!model.IsValid())
+            if (model.IsValid())
             {
-                return View("Error");
+                return View(model);
             }
-            return View(model);
+            return View("Error");
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Lab2.Models
+﻿using System;
+
+namespace Lab2.Models
 {
     public class Birth
     {
@@ -7,8 +9,7 @@
 
         public bool IsValid()
         {
-            return (Name != null || Date < DateTime.Now);
-
+            return !string.IsNullOrEmpty(Name) && Date < DateTime.Now;
         }
 
         public int BirthCalc()
@@ -16,5 +17,4 @@
             return DateTime.Now.Year - Date.Year;
         }
     }
-
 }
