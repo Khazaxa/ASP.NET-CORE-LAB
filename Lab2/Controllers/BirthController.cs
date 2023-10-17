@@ -1,5 +1,6 @@
 ﻿using Lab2.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.WindowsAzure.Storage;
 
 namespace Lab2.Controllers
 {
@@ -18,11 +19,12 @@ namespace Lab2.Controllers
         [HttpPost]
         public IActionResult BirthResult([FromForm] Birth model)
         {
-            if (model.IsValid())
+            if (!ModelState.IsValid)
             {
-                return View(model);
+                return View("BirthForm", model);
             }
-            return View("Error");
+            Console.WriteLine("Prawidłowe dane");
+            return View(model);
         }
     }
 }

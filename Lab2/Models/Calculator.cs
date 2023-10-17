@@ -14,7 +14,6 @@ namespace Lab2.Models
             { Operators.MUL, "&times;"},
             { Operators.DIV, "&divide;"},
 
-
         };
 
         public string Op
