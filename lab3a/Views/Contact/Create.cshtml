@@ -7,12 +7,32 @@
 
 <h1>Dodaj kontakt</h1>
 <form asp-controller="Contact" asp-action="Create" method="post">
-    <div asp-validation-summary="All"></div>
-    <input asp-for="Name" /> <br />
-    <input asp-for="Email" /> <br />
-    <input asp-for="Phone" /> <br />
-    <input asp-for="Birth" /> <br />
-    <button type="submit"> Utworz </button>
-    <button type="reset"> Wyczysc </button>
+    <div class="mb-3">
+        <label asp-for="Name"> Imie </label><br />
+        <input class="form-control" asp-for="Name" />
+        <span class = "text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" > Email </label> <br />
+        <input class="form-control" asp-for="Email" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone"> Telefon </label><br />
+        <input class="form-control" asp-for="Phone" />
+        <span class="text-danger" asp-validation-for="Phone"></span>
+    </div>
+    <div class="mb-3">
+        
+        <label asp-for="Birth"> Urodziny </label> <br />
+        <input class="form-control" asp-for="Birth" />
+        <span class="text-danger" asp-validation-for="Birth"></span>
+    </div>
+
+    <div>
+        <button class="btn btn-primary" type="submit"> Utworz </button>
+        <button class="btn-secondary" type="reset"> Wyczysc </button>
+    </div>
+   
     
 </form> 
