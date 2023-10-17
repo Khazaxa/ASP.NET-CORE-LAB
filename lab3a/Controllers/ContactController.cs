@@ -47,5 +47,23 @@ namespace lab3a.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Delete(int id) 
+        {
+            return View(_contacts[id]);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Contact model) 
+        {
+            _contacts.Remove(model.Id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Details()
+        {
+            return View(_contacts);
+        }
     }
 }
