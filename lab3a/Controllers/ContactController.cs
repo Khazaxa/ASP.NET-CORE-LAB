@@ -36,5 +36,16 @@ namespace lab3a.Controllers
         {
             return View(_contacts[id]);
         }
+
+        [HttpPost]
+        public IActionResult Update(Contact model) 
+        {
+            if(ModelState.IsValid) 
+            {
+                _contacts[model.Id] = model;
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }

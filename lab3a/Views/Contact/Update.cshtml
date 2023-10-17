@@ -7,7 +7,7 @@
 
 <h1>Edytuj kontakt</h1>
 <form asp-controller="Contact" asp-action="Update" method="post">
-
+    <input asp-for="Id"/>
     <div class="mb-3">
         <label asp-for="Name"> Imie </label><br />
         <input class="form-control" asp-for="Name" />
