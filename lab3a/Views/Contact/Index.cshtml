@@ -29,6 +29,9 @@
                 @item.Value.Email
             </td>
             <td>
+                <a class="btn btn-outline-secondary" asp-controller="Contact" asp-action="Update" asp-route-id=@item.Value.Id> Edycja </a>
+                <a class="btn btn-outline-info" asp-controller="Contact" asp-action="Details" asp-route-id=@item.Value.Id> Szczegoly </a>
+                <a class="btn btn-outline-danger" asp-controller="Contact" asp-action="Delete" asp-route-id=@item.Value.Id> Usun </a>
 
             </td>
         </tr>    

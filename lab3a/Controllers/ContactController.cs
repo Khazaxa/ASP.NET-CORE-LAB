@@ -30,5 +30,11 @@ namespace lab3a.Controllers
             }
             return View(); // ponownie wyswietl formularz z bledami
         }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            return View(_contacts[id]);
+        }
     }
 }
