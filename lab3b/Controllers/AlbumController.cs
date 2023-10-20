@@ -75,18 +75,27 @@ namespace lab3b.Controllers
             }
         }
 
-        [HttpGet]
         public IActionResult Delete(int id)
+        {
+            var album = _albums.ContainsKey(id) ? _albums[id] : null;
+
+            if (album == null)
+            {
+                return NotFound();
+            }
+
+            return View(album);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteConfirmed(int id)
         {
             if (_albums.ContainsKey(id))
             {
                 _albums.Remove(id);
-                return RedirectToAction("Index");
             }
-            else
-            {
-                return NotFound();
-            }
+
+            return RedirectToAction("Index");
         }
     }
 }

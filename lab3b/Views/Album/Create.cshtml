@@ -1,0 +1,49 @@
+﻿@model Album
+
+<h2>Dodaj Album</h2>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Nazwa"></label>
+        <input asp-for="Nazwa" class="form-control" />
+        <span asp-validation-for="Nazwa" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Zespol"></label>
+        <input asp-for="Zespol" class="form-control" />
+        <span asp-validation-for="Zespol" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SpisPiosenek"></label>
+        <input asp-for="SpisPiosenek" class="form-control" />
+        <span asp-validation-for="SpisPiosenek" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Notowanie"></label>
+        <input asp-for="Notowanie" class="form-control" />
+        <span asp-validation-for="Notowanie" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DataWydania"></label>
+        <input asp-for="DataWydania" class="form-control" />
+        <span asp-validation-for="DataWydania" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="CzasTrwania"></label>
+        <input asp-for="CzasTrwania" class="form-control" />
+        <span asp-validation-for="CzasTrwania" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Dodaj" class="btn btn-primary" />
+        <a class="btn btn-secondary" asp-action="Index">Powrót</a>
+    </div>
+</form>

@@ -1,0 +1,29 @@
+﻿@model Album
+
+<h2>Szczegóły Albumu</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nazwa</dt>
+        <dd class="col-sm-10">@Model.Nazwa</dd>
+
+        <dt class="col-sm-2">Zespol</dt>
+        <dd class="col-sm-10">@Model.Zespol</dd>
+
+        <dt class="col-sm-2">Spis Piosenek</dt>
+        <dd class="col-sm-10">@Model.SpisPiosenek</dd>
+
+        <dt class="col-sm-2">Notowanie</dt>
+        <dd class="col-sm-10">@Model.Notowanie</dd>
+
+        <dt class="col-sm-2">Data Wydania</dt>
+        <dd class="col-sm-10">@Model.DataWydania</dd>
+
+        <dt class="col-sm-2">Czas Trwania (w sekundach)</dt>
+        <dd class="col-sm-10">@Model.CzasTrwania</dd>
+    </dl>
+</div>
+
+<p>
+    <a class="btn btn-primary" asp-action="Index">Powrót do listy</a>
+</p>
