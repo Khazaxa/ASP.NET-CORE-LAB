@@ -2,11 +2,17 @@
 {
     public class MemoryContactService : IContactService
     {
+        private readonly IDateTimeProvider _dateTimeProvider;
+        public MemoryContactService(IDateTimeProvider dateTimeProvider)
+        {
+            _dateTimeProvider = dateTimeProvider;
+        }
         private Dictionary<int, Contact> _items = new Dictionary<int, Contact>();
         public int Add(Contact item)
         {
             int id = _items.Keys.Count != 0 ? _items.Keys.Max() : 0;
             item.Id = id + 1;
+            item.Created = _dateTimeProvider.date();
             _items.Add(item.Id, item);
             return item.Id;
         }
@@ -30,5 +36,6 @@
         {
             _items[item.Id] = item;
         }
+
     }
 }

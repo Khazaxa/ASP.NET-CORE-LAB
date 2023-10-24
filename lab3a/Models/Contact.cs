@@ -20,5 +20,8 @@ namespace lab3a.Models
         public DateTime? Birth { get; set; }        // pole opcjonalne
         [Display(Name = "Priorytet")]
         public Priority Priority { get; set; }
+        [HiddenInput]
+        public DateTime Created { get; set; }
+        
     }
 }
