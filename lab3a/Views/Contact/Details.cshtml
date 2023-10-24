@@ -1,4 +1,4 @@
-﻿@model List<Contact>
+﻿@model Contact
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -8,23 +8,23 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model[0].Name)
+            @Model.Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model[0].Email)
+            @Model.Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model[0].Phone)
+            @Model.Phone
         </th>
         <th>
-            @Html.DisplayNameFor(model => model[0].Birth)
+            @Model.Birth
         </th>
         <th>
-            @Html.DisplayNameFor(model => model[0].Priority)
+            @Model.Priority
         </th>
         
     </tr>
-    @foreach (var item in @Model)
+    @foreach (var item in Model)
     {
         <tr>
             <td>

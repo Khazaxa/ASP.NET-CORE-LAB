@@ -69,9 +69,9 @@ namespace lab3a.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            return View(_contactService.FindAll());
+            return View(_contactService.FindById(id));
         }
     }
 }
