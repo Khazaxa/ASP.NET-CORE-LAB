@@ -24,10 +24,16 @@
         <span class="text-danger" asp-validation-for="Phone"></span>
     </div>
     <div class="mb-3">
-
         <label asp-for="Birth"> Urodziny </label> <br />
         <input class="form-control" asp-for="Birth" />
         <span class="text-danger" asp-validation-for="Birth"></span>
+    </div>
+    <div class="mb-3"> 
+        <label asp-for="Priority"></label>
+        <div>
+            <span asp-validation-for="Priority" class="text-danger"></span>
+        </div>
+        <select class="form-control" asp-for="Priority" asp-items="@Html.GetEnumSelectList<Priority>()"></select>
     </div>
 
     <div>
