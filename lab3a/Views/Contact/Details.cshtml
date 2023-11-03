@@ -7,42 +7,19 @@
 <h1>To sa informacje szczegolowe na temat kontaktu</h1>
 <table class="table">
     <tr>
-        <th>
-            @Model.Name
-        </th>
-        <th>
-            @Model.Email
-        </th>
-        <th>
-            @Model.Phone
-        </th>
-        <th>
-            @Model.Birth
-        </th>
-        <th>
-            @Model.Priority
-        </th>
-        
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Birth</th>
+        <th>Priority</th>
     </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Email
-            </td>
-            <td>
-                @item.Phone
-            </td>
-            <td>
-                @item.Birth
-            </td>
-            <td>
-                @item.Priority
-            </td>
-        </tr>
-    }
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Email</td>
+        <td>@Model.Phone</td>
+        <td>@Model.Birth</td>
+        <td>@Model.Priority</td>
+    </tr>
 </table>
+
 <a class="btn btn-outline-primary" asp-action="Index"> Powrot </a>
