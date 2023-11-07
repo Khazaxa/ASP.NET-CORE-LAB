@@ -1,3 +1,4 @@
+using Data;
 using lab3a.Models;
 
 namespace lab3a
@@ -11,9 +12,13 @@ namespace lab3a
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddSingleton<IContactService, MemoryContactService>();
+            builder.Services.AddTransient<IContactService, EFContactService>();
 
             builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
+
+            builder.Services.AddDbContext<AppDbContext>();
+
+            
 
             var app = builder.Build();
 
