@@ -1,13 +1,15 @@
-﻿namespace lab3a.Models
+﻿using Data.Entities;
+
+namespace lab3a.Models
 {
     public class MemoryContactService : IContactService
     {
+        private Dictionary<int, Contact> _items = new Dictionary<int, Contact>();
         private readonly IDateTimeProvider _dateTimeProvider;
         public MemoryContactService(IDateTimeProvider dateTimeProvider)
         {
             _dateTimeProvider = dateTimeProvider;
         }
-        private Dictionary<int, Contact> _items = new Dictionary<int, Contact>();
         public int Add(Contact item)
         {
             int id = _items.Keys.Count != 0 ? _items.Keys.Max() : 0;
@@ -37,5 +39,9 @@
             _items[item.Id] = item;
         }
 
+        public List<OrganizationEntity> FindAllOrganizations()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -8,24 +8,26 @@ namespace lab3a.Models
         {
             return new ContactEntity()
             {
-                Id = model.Id,
+                ContactId = model.Id,
                 Name = model.Name,
-                Email = model.Email,
                 Phone = model.Phone,
-                Birth = model.Birth,
                 Priority = (int)model.Priority,
+                Birth = model.Birth,
+                Email = model.Email,
+                OrganizationId = model.OrganizationId,
             };
         }
-        public static Contact FromEntity(ContactEntity entity)
+
+        public static Contact ToModel(ContactEntity entity)
         {
             return new Contact()
             {
-                Id = entity.Id,
+                Id = entity.ContactId,
                 Name = entity.Name,
-                Email = entity.Email,
                 Phone = entity.Phone,
-                Birth = entity.Birth,
                 Priority = (Priority)entity.Priority,
+                Email = entity.Email,
+                OrganizationId = entity.OrganizationId,
             };
         }
     }

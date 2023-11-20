@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2", "Lab2\Lab2.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab3a", "lab3a\lab3a.csproj", "{3C49C1E2-B539-42B6-9986-793C77961528}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab3b", "lab3b\lab3b.csproj", "{55265601-CE07-4575-9DBD-BCE7119BDB3D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{BC44AAF8-B69E-4A37-99E5-8DF3021A8972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{BC44AAF8-B69E-4A37-99E5-8DF3021A8972}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{3C49C1E2-B539-42B6-9986-793C77961528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C49C1E2-B539-42B6-9986-793C77961528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C49C1E2-B539-42B6-9986-793C77961528}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55265601-CE07-4575-9DBD-BCE7119BDB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55265601-CE07-4575-9DBD-BCE7119BDB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55265601-CE07-4575-9DBD-BCE7119BDB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55265601-CE07-4575-9DBD-BCE7119BDB3D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC44AAF8-B69E-4A37-99E5-8DF3021A8972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC44AAF8-B69E-4A37-99E5-8DF3021A8972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC44AAF8-B69E-4A37-99E5-8DF3021A8972}.Release|Any CPU.ActiveCfg = Release|Any CPU

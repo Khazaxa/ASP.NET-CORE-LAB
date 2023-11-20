@@ -1,7 +1,7 @@
 ﻿using Data;
 using Data.Entities;
 
-namespace lab3a.Models
+namespace lab3b.Models
 {
     public class EFAlbumService : IContactService
     {

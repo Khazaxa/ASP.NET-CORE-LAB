@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.CompilerServices;
+
 
 namespace Data.Entities
 {
     [Table("contacts")]
     public class ContactEntity
     {
-        public int Id { get; set; }
+        [Key]
+        public int ContactId { get; set; }
         [MaxLength(50)]
         [Required]
         public string Name { get; set; }
@@ -25,5 +21,8 @@ namespace Data.Entities
         [Column("birth_date")]
         public DateTime? Birth { get; set; }
         public int Priority { get; set; }
+        public OrganizationEntity Organization { get; set; }
+        public int? OrganizationId { get; set; }
+
     }
 }

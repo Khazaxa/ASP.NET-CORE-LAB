@@ -1,18 +1,16 @@
 ﻿using lab3a.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace lab3a.Controllers
 {
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;
-        static int id = 1;
-
         public ContactController(IContactService contactService)
         {
             _contactService = contactService;
         }
-
         public IActionResult Index()
         {
             return View(_contactService.FindAll());
@@ -21,8 +19,28 @@ namespace lab3a.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            //var list = _contactService.FindAllOrganizations()
+            //    .Select(e => new SelectListItem()
+            //    {
+            //        Text = e.Name,
+            //        Value = e.Id.ToString(),
+
+            //    }).ToList();
+            //return View(new Contact() { OrganizationList = list });
+
+            var model = new Contact();
+            model.OrganizationList = _contactService
+                .FindAllOrganizations()
+                .Select(o => new SelectListItem() { Value = o.Id.ToString(), Text = o.Name.ToString() })
+                .ToList();
+            return View(model);
         }
+
+        //private List<SelectListItem> CreateSelectListItem();
+        //{
+        //    return
+        //}
+
 
         [HttpPost]
         public IActionResult Create(Contact model)
@@ -32,22 +50,19 @@ namespace lab3a.Controllers
                 _contactService.Add(model);
                 return RedirectToAction("Index");
             }
-            else
-            {
-                return View(model);
-            }
+            return View(); //ponownie wyswitl form
         }
 
-         [HttpGet]
+        [HttpGet]
         public IActionResult Update(int id)
         {
             return View(_contactService.FindById(id));
         }
 
         [HttpPost]
-        public IActionResult Update(Contact model) 
+        public IActionResult Update(Contact model)
         {
-            if(ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 _contactService.Update(model);
                 return RedirectToAction("Index");
@@ -56,18 +71,18 @@ namespace lab3a.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id) 
+        public IActionResult Delete(int id)
         {
-            return View(
-                _contactService.FindById(id)); 
+            return View(_contactService.FindById(id));
         }
 
         [HttpPost]
-        public IActionResult Delete(Contact model) 
+        public IActionResult Delete(Contact model)
         {
             _contactService.Delete(model.Id);
             return RedirectToAction("Index");
         }
+
 
         public IActionResult Details(int id)
         {
