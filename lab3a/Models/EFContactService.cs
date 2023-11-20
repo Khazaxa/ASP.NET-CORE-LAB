@@ -12,11 +12,17 @@ namespace lab3a.Models
         }
         public int Add(Contact contact)
         {
-            var e = _context.Contacts.Add(ContactMapper.ToEntity(contact));
+            if (contact.OrganizationId == 0) // Zakładając, że 0 nie jest prawidłowym ID
+            {
+                throw new InvalidOperationException("OrganizationId is required");
+            }
+
+            var entity = ContactMapper.ToEntity(contact);
+            var e = _context.Contacts.Add(entity);
             _context.SaveChanges();
-            int id = e.Entity.ContactId;
-            return id;
+            return e.Entity.ContactId;
         }
+
 
         public void Delete(int id)
         {
@@ -46,8 +52,15 @@ namespace lab3a.Models
 
         public void Update(Contact contact)
         {
-            _context.Contacts.Update(ContactMapper.ToEntity(contact));
+            if (contact.OrganizationId == 0)
+            {
+                throw new InvalidOperationException("OrganizationId is required");
+            }
+
+            var entity = ContactMapper.ToEntity(contact);
+            _context.Contacts.Update(entity);
             _context.SaveChanges();
         }
+
     }
 }
