@@ -1,5 +1,7 @@
 using Data;
 using lab3a.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace lab3a
 {
@@ -9,14 +11,17 @@ namespace lab3a
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddRazorPages();
+            builder.Services.AddSession();
             builder.Services.AddTransient<IContactService, EFContactService>();
-
             builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
-
             builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
 
             
 
@@ -35,8 +40,10 @@ namespace lab3a
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
+            app.UseAuthentication();                                 
+            app.UseAuthorization();                                  
+            app.UseSession();                                        
+            app.MapRazorPages();                                     
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
