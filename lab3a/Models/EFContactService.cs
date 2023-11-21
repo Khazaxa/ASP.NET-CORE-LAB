@@ -6,15 +6,18 @@ namespace lab3a.Models
     public class EFContactService : IContactService
     {
         private readonly AppDbContext _context;
+
         public EFContactService(AppDbContext appDbContext)
         {
             _context = appDbContext;
         }
+
         public int Add(Contact contact)
         {
-            if (contact.OrganizationId == 0) // Zakładając, że 0 nie jest prawidłowym ID
+            contact.OrganizationId = FindOrganizationIdByName(contact.OrganizationName) ?? 0;
+            if (contact.OrganizationId == 0)
             {
-                throw new InvalidOperationException("OrganizationId is required");
+                throw new InvalidOperationException("Valid OrganizationId is required");
             }
 
             var entity = ContactMapper.ToEntity(contact);
@@ -52,14 +55,20 @@ namespace lab3a.Models
 
         public void Update(Contact contact)
         {
+            contact.OrganizationId = FindOrganizationIdByName(contact.OrganizationName) ?? 0;
             if (contact.OrganizationId == 0)
             {
-                throw new InvalidOperationException("OrganizationId is required");
+                throw new InvalidOperationException("Valid OrganizationId is required");
             }
 
             var entity = ContactMapper.ToEntity(contact);
             _context.Contacts.Update(entity);
             _context.SaveChanges();
+        }
+        public int? FindOrganizationIdByName(string name)
+        {
+            var organization = _context.Organizations.FirstOrDefault(o => o.Name == name);
+            return organization?.Id;
         }
 
     }

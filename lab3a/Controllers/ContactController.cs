@@ -19,27 +19,19 @@ namespace lab3a.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            //var list = _contactService.FindAllOrganizations()
-            //    .Select(e => new SelectListItem()
-            //    {
-            //        Text = e.Name,
-            //        Value = e.Id.ToString(),
+            var model = new Contact
+            {
+                OrganizationList = _contactService.FindAllOrganizations()
+                    .Select(o => new SelectListItem
+                    {
+                        Value = o.Id.ToString(),
+                        Text = o.Name
+                    }).ToList()
+            };
 
-            //    }).ToList();
-            //return View(new Contact() { OrganizationList = list });
-
-            var model = new Contact();
-            model.OrganizationList = _contactService
-                .FindAllOrganizations()
-                .Select(o => new SelectListItem() { Value = o.Id.ToString(), Text = o.Name.ToString() })
-                .ToList();
             return View(model);
         }
 
-        //private List<SelectListItem> CreateSelectListItem();
-        //{
-        //    return
-        //}
 
 
         [HttpPost]
@@ -50,7 +42,7 @@ namespace lab3a.Controllers
                 _contactService.Add(model);
                 return RedirectToAction("Index");
             }
-            return View(); //ponownie wyswitl form
+            return View(); 
         }
 
         [HttpGet]

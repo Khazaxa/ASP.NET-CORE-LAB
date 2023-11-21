@@ -8,6 +8,11 @@ namespace lab3a.Models
 {
     public class Contact
     {
+        public Contact()
+        {
+            OrganizationList = new List<SelectListItem>();
+        }
+
         [HiddenInput]
         public int Id { get; set; }
         [Required(ErrorMessage = "Pole imię jest wymagane.")]
@@ -29,8 +34,10 @@ namespace lab3a.Models
         [HiddenInput]
         public DateTime Created { get; set; }
         [HiddenInput]
-        public int? OrganizationId { get; set; }
+        public int OrganizationId { get; set; } // Zmiana na non-nullable int
+
+        public string OrganizationName { get; set; } // Nowe pole
         [ValidateNever]
-        public List<SelectListItem>? OrganizationList { get; set; }
+        public List<SelectListItem> OrganizationList { get; set; }
     }
 }

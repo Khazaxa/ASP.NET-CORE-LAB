@@ -14,7 +14,7 @@ namespace lab3a.Models
                 Priority = (int)model.Priority,
                 Birth = model.Birth,
                 Email = model.Email,
-                OrganizationId = model.OrganizationId,
+                OrganizationId = model.OrganizationId, // Bezpośrednie przypisanie
             };
         }
 
@@ -27,7 +27,7 @@ namespace lab3a.Models
                 Phone = entity.Phone,
                 Priority = (Priority)entity.Priority,
                 Email = entity.Email,
-                OrganizationId = entity.OrganizationId,
+                OrganizationId = (int)entity.OrganizationId, // Bezpośrednie przypisanie
             };
         }
     }
