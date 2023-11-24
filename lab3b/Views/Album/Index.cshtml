@@ -2,32 +2,26 @@
 
 <h2>Lista Albumów</h2>
 
-<p>
-    <a class="btn btn-primary" asp-action="Create">Dodaj nowy album</a>
-</p>
+<a asp-controller="Album" asp-action="Create" class="btn btn-success">Dodaj Album</a>
 
 <table class="table">
-    <thead>
+    <tr>
+        <th>Nazwa</th>
+        <th>Zespół</th>
+        <th>Data Wydania</th>
+        <th>Akcje</th>
+    </tr>
+    @foreach (var pair in Model)
+    {
         <tr>
-            <th>Nazwa</th>
-            <th>Zespół</th>
-            <th>Notowanie</th>
-            <th>Akcje</th>
+            <td>@pair.Value.Name</td>
+            <td>@pair.Value.Band</td>
+            <td>@pair.Value.ReleaseDate.ToShortDateString()</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@pair.Key" class="btn btn-primary">Edytuj</a>
+                <a asp-action="Details" asp-route-id="@pair.Key" class="btn btn-info">Szczegóły</a>
+                <a asp-action="Delete" asp-route-id="@pair.Key" class="btn btn-danger">Usuń</a>
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Value.Nazwa</td>
-                <td>@item.Value.Zespol</td>
-                <td>@item.Value.Notowanie</td>
-                <td>
-                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Key">Edytuj</a> 
-                    <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Key">Szczegóły</a> 
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Key">Usuń</a>
-                </td>
-            </tr>
-        }
-    </tbody>
+    }
 </table>

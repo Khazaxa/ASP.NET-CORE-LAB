@@ -1,101 +1,86 @@
 ﻿using lab3b.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace lab3b.Controllers
+namespace lab3b.Controllers;
+
+public class AlbumController : Controller
 {
-    public class AlbumController : Controller
+    private static readonly Dictionary<int, Album> _albums = new Dictionary<int, Album>();
+
+    public IActionResult Index()
     {
-        private static Dictionary<int, Album> _albums = new Dictionary<int, Album>();
+        return View(_albums);
+    }
+    
+    [HttpGet]
+    public IActionResult Create()
+    {
+        return View();
+    }
 
-        public IActionResult Index()
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Create([Bind("Name, Band, ChartRanking, ReleaseDate, Duration")] Album album, string[] songs)
+    {
+        if (ModelState.IsValid)
         {
-            return View(_albums);
+            album.SongList = new Dictionary<int, string>();
+            int songId = 1;
+            foreach (var song in songs)
+            {
+                if (!string.IsNullOrWhiteSpace(song))
+                {
+                    album.SongList.Add(songId++, song);
+                }
+            }
+
+            album.Id = _albums.Count + 1;
+            _albums.Add(album.Id, album);
+            return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public IActionResult Create()
+        return View(album);
+    }
+
+    public IActionResult Edit(int id)
+    {
+        if (!_albums.ContainsKey(id))
         {
-            return View();
+            return NotFound();
         }
 
-        [HttpPost]
-        public IActionResult Create(Album album)
+        return View(_albums[id]);
+    }
+    
+    public IActionResult Details(int id)
+    {
+        if (_albums.ContainsKey(id))
         {
-            if (ModelState.IsValid)
-            {
-                int id = _albums.Keys.Count != 0 ? _albums.Keys.Max() : 0;
-                album.Id = id + 1;
-                _albums.Add(album.Id, album);
-
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View(album);
-            }
-        }
-
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-            if (_albums.ContainsKey(id))
-            {
-                return View(_albums[id]);
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Album album)
-        {
-            if (ModelState.IsValid)
-            {
-                _albums[album.Id] = album;
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View(album);
-            }
-        }
-
-        [HttpGet]
-        public IActionResult Details(int id)
-        {
-            if (_albums.ContainsKey(id))
-            {
-                return View(_albums[id]);
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
-
-        public IActionResult Delete(int id)
-        {
-            var album = _albums.ContainsKey(id) ? _albums[id] : null;
-
-            if (album == null)
-            {
-                return NotFound();
-            }
-
+            var album = _albums[id];
             return View(album);
         }
-
-        [HttpPost]
-        public IActionResult DeleteConfirmed(int id)
+        else
         {
-            if (_albums.ContainsKey(id))
-            {
-                _albums.Remove(id);
-            }
-
-            return RedirectToAction("Index");
+            return NotFound();
         }
+    }
+
+    
+    public IActionResult Delete(int id)
+    {
+        if (!_albums.ContainsKey(id))
+        {
+            return NotFound();
+        }
+
+        return View(_albums[id]);
+    }
+    
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public IActionResult DeleteConfirmed(int id)
+    {
+        _albums.Remove(id);
+        return RedirectToAction(nameof(Index));
     }
 }

@@ -1,36 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace lab3b.Models
+namespace lab3b.Models;
+
+public class Album
 {
-    public class Album
-    {
-        [HiddenInput]
-        public int Id { get; set; }
+    [HiddenInput]
+    public int Id { get; set; }
 
-        [Required(ErrorMessage = "Pole 'Nazwa' jest wymagane.")]
-        [Display(Name = "Nazwa")]
-        public string Nazwa { get; set; }
+    [Required(ErrorMessage = "Proszę podać nazwę albumu!")]
+    public string Name { get; set; }
 
-        [Required(ErrorMessage = "Pole 'Zespół' jest wymagane.")]
-        [Display(Name = "Zespół")]
-        public string Zespol { get; set; }
+    [Required(ErrorMessage = "Proszę podać nazwę zespołu!")]
+    public string Band { get; set; }
+    
+    public Dictionary<int, string> SongList { get; set; } = new Dictionary<int, string>();
 
-        [Required(ErrorMessage = "Pole 'Spis piosenek' jest wymagane.")]
-        [Display(Name = "Spis piosenek")]
-        public string SpisPiosenek { get; set; }
+    [Required(ErrorMessage = "Proszę podać datę wydania albumu!")]
+    public int ChartRanking { get; set; }
 
-        [Required(ErrorMessage = "Pole 'Notowanie' jest wymagane.")]
-        [Display(Name = "Notowanie")]
-        public int Notowanie { get; set; }
+    [Required(ErrorMessage = "Proszę podać numer w notowaniu!")]
+    [DataType(DataType.Date)]
+    public DateTime ReleaseDate { get; set; }
 
-        [Required(ErrorMessage = "Pole 'Data wydania' jest wymagane.")]
-        [Display(Name = "Data Wydania")]
-        public DateTime DataWydania { get; set; }
-
-        [Required(ErrorMessage = "Pole 'Czas trwania' jest wymagane.")]
-        [Display(Name = "Czas Trwania (w sekundach)")]
-        public int CzasTrwania { get; set; }
-
-    }
+    [Required(ErrorMessage = "Proszę podać czas trwania albumu!")]
+    [RegularExpression(@"^\d{1,2}:\d{2}$", ErrorMessage = "Czas trwania musi być w formacie HH:MM.")]
+    public string Duration { get; set; }
+ 
 }
