@@ -1,0 +1,66 @@
+﻿@model Album
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name">Nazwa Albumu</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Band">Zespół</label>
+        <input asp-for="Band" class="form-control" />
+        <span asp-validation-for="Band" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Spis Piosenek</label>
+        <div id="songList"></div>
+        <button type="button" id="addSong" class="btn btn-primary">+</button>
+        <button type="button" id="rmSong" class="btn btn-primary">-</button>
+    </div>
+    <div class="form-group">
+        <label asp-for="ChartRanking">Notowanie</label>
+        <input asp-for="ChartRanking" class="form-control" />
+        <span asp-validation-for="ChartRanking" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReleaseDate">Data Wydania</label>
+        <input asp-for="ReleaseDate" class="form-control" />
+        <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Duration">Czas Trwania</label>
+        <input asp-for="Duration" class="form-control" />
+        <span asp-validation-for="Duration" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Utwórz</button>
+    <button class="btn btn-danger" type="reset">Wyczyść</button>
+</form>
+<a asp-action="Index" class="btn btn-secondary">Powrót do listy</a>
+
+
+@section Scripts {
+    <script>
+        var songId = 0;
+
+        document.getElementById('addSong').addEventListener('click', function () {
+            var newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.name = 'SongList[' + songId + ']';
+            newInput.classList.add('form-control', 'mb-2');
+
+            var songListDiv = document.getElementById('songList');
+            songListDiv.appendChild(newInput);
+
+            songId++;
+        });
+
+        document.getElementById('rmSong').addEventListener('click', function () {
+            var songListDiv = document.getElementById('songList');
+            if (songListDiv.children.length > 0) {
+                songListDiv.removeChild(songListDiv.lastChild);
+                songId--;
+            }
+        });
+    </script>
+}
