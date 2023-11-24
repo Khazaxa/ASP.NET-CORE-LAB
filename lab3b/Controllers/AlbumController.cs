@@ -6,17 +6,18 @@ namespace lab3b.Controllers;
 public class AlbumController : Controller
 {
     private static readonly Dictionary<int, Album> _albums = new Dictionary<int, Album>();
-    
+
     public IActionResult Index()
     {
         return View(_albums);
     }
     
+    [HttpGet]
     public IActionResult Create()
     {
         return View();
     }
-    
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create([Bind("Name, Band, ChartRanking, ReleaseDate, Duration")] Album album, string[] songs)
@@ -24,14 +25,12 @@ public class AlbumController : Controller
         if (ModelState.IsValid)
         {
             album.SongList = new Dictionary<int, string>();
-            
             int songId = 1;
             foreach (var song in songs)
             {
                 if (!string.IsNullOrWhiteSpace(song))
                 {
-                    album.SongList.Add(songId, song);
-                    songId++;
+                    album.SongList.Add(songId++, song);
                 }
             }
 
@@ -65,6 +64,7 @@ public class AlbumController : Controller
             return NotFound();
         }
     }
+
     
     public IActionResult Delete(int id)
     {

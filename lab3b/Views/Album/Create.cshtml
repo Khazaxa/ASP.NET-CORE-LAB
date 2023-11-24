@@ -41,16 +41,28 @@
 
 @section Scripts {
     <script>
-        var songId = 0;
+        var songId = 1;
 
         document.getElementById('addSong').addEventListener('click', function () {
+            var songContainer = document.createElement('div');
+            songContainer.classList.add('song-item', 'mb-2');
+
+            // Etykieta dla ID piosenki
+            var label = document.createElement('span');
+            label.textContent = 'ID: ' + songId + ': ';
+            label.classList.add('mr-2');
+
+            // Pole tekstowe dla piosenki
             var newInput = document.createElement('input');
             newInput.type = 'text';
             newInput.name = 'SongList[' + songId + ']';
-            newInput.classList.add('form-control', 'mb-2');
+            newInput.classList.add('form-control');
+
+            songContainer.appendChild(label);
+            songContainer.appendChild(newInput);
 
             var songListDiv = document.getElementById('songList');
-            songListDiv.appendChild(newInput);
+            songListDiv.appendChild(songContainer);
 
             songId++;
         });
@@ -64,3 +76,4 @@
         });
     </script>
 }
+

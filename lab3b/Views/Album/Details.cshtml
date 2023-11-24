@@ -1,6 +1,6 @@
 ﻿@model Album
 
-<h2>Szczegóły Albumu</h2>
+<h2>Szczegóły Albumu: @Model.Name</h2>
 
 <div>
     <table class="table">
@@ -16,12 +16,19 @@
             <td>@Model.Name</td>
             <td>@Model.Band</td>
             <td>
-                <ul>
-                @foreach (var song in Model.SongList)
+                @if (Model.SongList != null && Model.SongList.Any())
                 {
-                    <li>@song.Key - @song.Value</li>
+                    <ul>
+                    @foreach (var song in Model.SongList)
+                    {
+                        <li>@song.Key - @song.Value</li>
+                    }
+                    </ul>
                 }
-                </ul>
+                else
+                {
+                    <p>Brak piosenek.</p>
+                }
             </td>
             <td>@Model.ChartRanking</td>
             <td>@Model.ReleaseDate.ToString("d")</td> 
