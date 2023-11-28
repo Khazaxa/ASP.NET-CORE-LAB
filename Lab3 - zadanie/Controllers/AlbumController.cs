@@ -54,10 +54,10 @@ namespace Lab3zadanie.Controllers
         {
             if (ModelState.IsValid)
             {
-                _albumService.Update(model); 
+                _albumService.Update(model);
                 return RedirectToAction("Index");
             }
-            return View();
+            return View(model);
         }
 
         [HttpGet]
