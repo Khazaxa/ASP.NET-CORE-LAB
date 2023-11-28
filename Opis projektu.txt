@@ -1,9 +1,13 @@
 https://record-it.gitbook.io/programowanie-w-srodowisku-asp.net/laboratorium-1
 
 Apka Album
-zapisywana lokalnie w tabeli (AlbumData)
+zapisywana lokalnie w tabeli (AlbumData) SQLLite
+
 z logowaniem do aplikacji
 Identity
+
+dodawanie albumu z api
+
 
 migracje:
 dotnet tool install --global dotnet-ef

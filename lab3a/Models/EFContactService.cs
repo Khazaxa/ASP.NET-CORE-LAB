@@ -6,6 +6,7 @@ namespace lab3a.Models
     public class EFContactService : IContactService
     {
         private readonly AppDbContext _context;
+        private object __ctx;
 
         public EFContactService(AppDbContext appDbContext)
         {
@@ -71,5 +72,14 @@ namespace lab3a.Models
             return organization?.Id;
         }
 
+        public PagingList<Contact> FindPage(int page, int size)
+        {
+            __ctx.Contacts
+                .OrderBy(o => o.Name)
+                .Skip((page-1)*size)
+                .Take(size)
+                .Select(ContactMapper.FromEntity)
+                .ToList();
+        }
     }
 }

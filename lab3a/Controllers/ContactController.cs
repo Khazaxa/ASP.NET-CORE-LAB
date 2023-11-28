@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace lab3a.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;
@@ -34,6 +34,21 @@ namespace lab3a.Controllers
             return View(model);
         }
 
+        public IActionResult CreateApi()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateApi(Contact model)
+        {
+              if (ModelState.IsValid)
+            {
+                _contactService.Add(model); 
+                return RedirectToAction("Index"); 
+            } 
+            return View();
+        }
 
 
         [HttpPost]

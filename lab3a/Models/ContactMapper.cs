@@ -4,6 +4,8 @@ namespace lab3a.Models
 {
     public class ContactMapper
     {
+        public static object FromEntity { get; internal set; }
+
         public static ContactEntity ToEntity(Contact model)
         {
             return new ContactEntity()
