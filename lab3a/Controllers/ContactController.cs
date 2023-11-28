@@ -18,6 +18,11 @@ namespace lab3a.Controllers
             return View(_contactService.FindAll());
         }
 
+        public IActionResult PagedIndex(int page = 1, int size = 2)
+        {
+            return View(_contactService.FindPage(page, size));
+        }
+
         [HttpGet]
         public IActionResult Create()
         {

@@ -80,6 +80,7 @@ namespace lab3a.Models
                 .Take(size)
                 .Select(ContactMapper.FromEntity)
                 .ToList();
+            return PagingList<Contact>.Create(__ctx.Contacts, __ctx.Contacts.Count(), page, size);
         }
     }
 }
