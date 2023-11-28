@@ -1,9 +1,0 @@
-﻿@model Album
-
-<form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="Id" />
-    <h3>Czy na pewno chcesz usunąć ten album?</h3>
-
-    <button type="submit" class="btn btn-danger">Usuń</button>
-    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
-</form>

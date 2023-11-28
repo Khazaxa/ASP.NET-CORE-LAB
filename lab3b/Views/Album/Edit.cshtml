@@ -1,9 +1,0 @@
-﻿@model Album
-
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="Id" />
-    <div asp-validation-summary="All" class="text-danger"></div>
-
-    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
-</form>
-<a asp-action="Index" class="btn btn-secondary">Powrót do listy</a>
