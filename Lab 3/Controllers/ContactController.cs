@@ -18,9 +18,9 @@ namespace Lab_3.Controllers
             return View(_contactService.FindAll());
         }
 
-        public IActionResult PagedIndex(int page=1, int size=2)
+        public IActionResult PagedIndex(int page = 1, int size = 2)
         {
-            return View(_contactService.FindPage(page,size));
+            return View(_contactService.FindPage(page, size));
         }
 
         [HttpGet]
@@ -56,7 +56,7 @@ namespace Lab_3.Controllers
                 .FindAllOrganizations()
                 .Select(o => new SelectListItem() { Value = o.Id.ToString(), Text = o.Name.ToString() })
                 .ToList();
-            return View(model); 
+            return View(model);
         }
 
         //private List<SelectListItem> CreateSelectListItem();
@@ -65,15 +65,19 @@ namespace Lab_3.Controllers
         //}
 
 
-    [HttpPost]
+        [HttpPost]
         public IActionResult Create(Contact model)
         {
-            if(ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 _contactService.Add(model);
                 return RedirectToAction("Index");
             }
-            return View(); //ponownie wyswitl form
+            model.OrganizationList = _contactService
+                .FindAllOrganizations()
+                .Select(o => new SelectListItem() { Value = o.Id.ToString(), Text = o.Name.ToString() })
+                .ToList();
+            return View(model);
         }
 
         [HttpGet]
@@ -85,7 +89,7 @@ namespace Lab_3.Controllers
         [HttpPost]
         public IActionResult Update(Contact model)
         {
-            if(ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 _contactService.Update(model);
                 return RedirectToAction("Index");
@@ -94,7 +98,7 @@ namespace Lab_3.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id) 
+        public IActionResult Delete(int id)
         {
             return View(_contactService.FindById(id));
         }
@@ -106,7 +110,7 @@ namespace Lab_3.Controllers
             return RedirectToAction("Index");
         }
 
-        
+
         public IActionResult Details(int id)
         {
             return View(_contactService.FindById(id));
