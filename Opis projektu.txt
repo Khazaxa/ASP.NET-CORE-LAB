@@ -8,6 +8,7 @@ Identity
 
 dodawanie albumu z api
 
+dodac ograniczenie liczby na stronie (lab8)
 
 migracje:
 dotnet tool install --global dotnet-ef
