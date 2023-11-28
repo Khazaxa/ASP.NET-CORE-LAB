@@ -4,9 +4,9 @@
 *@
 @{
 }
-<h1>Are you sure you want to delete album nr: @Model.Id</h1>
+<h1>Are you sure you want to delete album: @Model.Title</h1>
 <form asp-controller="Album" asp-action="Delete">
     <input asp-for="Id" />
-    <button class="btn btn-primary" type="submit">Yes</button>
+    <button class="btn btn-danger" type="submit">Yes</button>
     <a class="btn btn-primary" asp-action="Index">No</a>
 </form>

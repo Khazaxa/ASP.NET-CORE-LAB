@@ -15,9 +15,19 @@
         <span class="text-danger" asp-validation-for="Artist"></span>
     </div>
     <div class="mb-3">
+        <label asp-for="ChartPosition ">ChartPosition</label>
+        <input class="form-control" asp-for="ChartPosition " />
+        <span class="text-danger" asp-validation-for="ChartPosition "></span>
+    </div>
+    <div class="mb-3">
         <label asp-for="ReleaseYear">Release Year</label>
         <input class="form-control" asp-for="ReleaseYear" />
         <span class="text-danger" asp-validation-for="ReleaseYear"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Duration">Duration</label>
+        <input class="form-control" asp-for="Duration" />
+        <span class="text-danger" asp-validation-for="Duration"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Genre">Genre</label>
@@ -26,6 +36,7 @@
     </div>
     <div class="mb-3">
         <button class="btn btn-primary" type="submit">Create</button>
-        <button class="btn btn-primary" type="reset">Clear</button>
+        <button class="btn btn-danger" type="reset">Clear</button>
+        <a class="btn btn-secondary" asp-action="Index">Back</a>
     </div>
 </form>

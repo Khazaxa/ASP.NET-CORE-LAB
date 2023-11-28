@@ -18,9 +18,13 @@ namespace Lab3zadanie.Models
         [DisplayName("Artist/Band")]
         public string Artist { get; set; }
 
+        public int ChartPosition { get; set; }
+
         [Range(1900, 2023)]
         [Display(Name = "Release Year")]
         public int? ReleaseYear { get; set; }
+
+        public int Duration { get; set; }
 
         [DisplayName("Genre")]
         public string Genre { get; set; }

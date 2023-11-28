@@ -2,7 +2,7 @@
 @{
     // Your existing Razor page directives and setup
 }
-<h1>Album @Model.Id Details</h1>
+<h1>Album "@Model.Title" Details</h1>
 <table class="table">
     <tr>
         <th>
@@ -12,10 +12,16 @@
             Artist/Band
         </th>
         <th>
-            Genre
+            Chart Position
         </th>
         <th>
             Release Year
+        </th>
+        <th>
+            Duration
+        </th>
+        <th>
+            Genre
         </th>
     </tr>
 
@@ -27,10 +33,16 @@
             @Model.Artist
         </td>
         <td>
-            @Model.Genre
+            @Model.ChartPosition
         </td>
         <td>
             @Model.ReleaseYear
+        </td>
+        <td>
+            @Model.Duration
+        </td>
+        <td>
+            @Model.Genre
         </td>
     </tr>
 
