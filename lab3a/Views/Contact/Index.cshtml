@@ -1,13 +1,15 @@
-﻿@model List<Contact>
+﻿@model List<lab3a.Models.Contact>
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
-<h1>Lista kontaktow</h1>
-<a class = "btn btn-primary" asp-controller="Contact" asp-action="Create">Dodaj kontakt</a>
+<h1>Lista kontaktów</h1>
+<a class="btn btn-primary" asp-controller="Contact" asp-action="Create">Dodaj kontakt</a>
+<a class="btn btn-primary" asp-controller="Contact" asp-action="CreateApi">Dodaj kontakt Api</a>
 
-@if (Model.Count > 0){
+@if(Model.Count > 0)
+{
 <table class="table">
     <tr>
         <th>
@@ -17,13 +19,10 @@
             @Html.DisplayNameFor(model => model[0].Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model[0].Priority)
-        </th>
-        <th>
             Akcje
         </th>
     </tr>
-    @foreach (var item in @Model)
+    @foreach(var item in Model)
     {
         <tr>
             <td>
@@ -33,15 +32,11 @@
                 @item.Email
             </td>
             <td>
-                @item.Priority.GetDisplayName()
+                <a class="btn btn-outline-secondary" asp-controller="Contact" asp-action="Update" asp-route-id=@item.Id>Edycja</a>
+                <a class="btn btn-outline-info" asp-controller="Contact" asp-action="Details" asp-route-id=@item.Id>Szczegóły</a>
+                <a class="btn btn-outline-danger" asp-controller="Contact" asp-action="Delete" asp-route-id=@item.Id>Usuń</a>
             </td>
-            <td>
-                <a class="btn btn-outline-secondary" asp-controller="Contact" asp-action="Update" asp-route-id=@item.Id> Edycja </a>
-                <a class="btn btn-outline-info" asp-controller="Contact" asp-action="Details" asp-route-id=@item.Id> Szczegoly </a>
-                <a class="btn btn-outline-danger" asp-controller="Contact" asp-action="Delete" asp-route-id=@item.Id> Usun </a>
-
-            </td>
-        </tr>    
+        </tr>
     }
 </table>
 }

@@ -1,4 +1,5 @@
-﻿@model Contact
+﻿@using lab3a.Models
+@model lab3a.Models.Contact
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -7,19 +8,19 @@
 <h1>Dodaj kontakt</h1>
 <form asp-controller="Contact" asp-action="Create" method="post">
     <div class="mb-3">
-        <label asp-for="Name"></label>
-        <input class="form-control" asp-for="Name" />
-        <span class="text-danger" asp-validation-for="Name"></span>
+    <label asp-for="Name"></label>
+    <input class="form-control" asp-for="Name"/>
+    <span class="text-danger" asp-validation-for="Name"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Email"></label>
-        <input class="form-control" asp-for="Email" />
-        <span class="text-danger" asp-validation-for="Email"></span>
+    <label asp-for="Email"></label>
+    <input class="form-control" asp-for="Email"/>
+    <span class="text-danger" asp-validation-for="Email"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Phone"></label>
-        <input class="form-control" asp-for="Phone" />
-        <span class="text-danger" asp-validation-for="Phone"></span>
+    <label asp-for="Phone"></label>
+    <input class="form-control" asp-for="Phone"/>
+    <span class="text-danger" asp-validation-for="Phone"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Birth"></label>
@@ -34,15 +35,15 @@
         <select class="form-control" asp-for="Priority" asp-items="@Html.GetEnumSelectList<Priority>()"></select>
     </div>
     <div class="mb-3">
-        <label asp-for="OrganizationId">Organizacja</label>
+        <label asp-for="OrganizationId">Organizacja</label> 
+       <input class="form-control" asp-for="OrganizationId" />
         <select class="form-control" asp-for="OrganizationId" asp-items="@Model.OrganizationList"></select>
     </div>
-
     <div class="mb-3">
         <button class="btn btn-primary" type="submit">Utwórz</button>
         <button class="btn btn-primary" type="reset">Wyczyść</button>
     </div>
-
+   
 
 
 </form>

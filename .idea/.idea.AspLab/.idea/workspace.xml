@@ -16,7 +16,106 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b32fc223-b2e8-46ad-ac88-e54e8ae0f24a" name="Changes" comment="" />
+    <list default="true" id="b32fc223-b2e8-46ad-ac88-e54e8ae0f24a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/AccessDenied.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/AccessDenied.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ConfirmEmail.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ExternalLogin.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ExternalLogin.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ForgotPassword.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ForgotPassword.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Lockout.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Lockout.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Login.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Login.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/LoginWith2fa.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/LoginWith2fa.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Logout.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Logout.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/Email.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/Email.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ResetPassword.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ResetPassword.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/_StatusMessage.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/Account/_ViewImports.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/_ViewImports.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Areas/Identity/Pages/_ViewStart.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Controllers/OrganizationsApiController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Models/PagingList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Views/Contact/CreateApi.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Views/Contact/PagedIndex.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Views/Home/Update.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3a/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspLab/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspLab/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Entities/ContactEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Entities/ContactEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Entities/OrganizationEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Entities/OrganizationEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Controllers/ContactController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/lab3a/Controllers/ContactController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/Contact.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/ContactMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/CurrentDateTimeProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/EFContactService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/EnumExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/ErrorViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/IContactService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/IDateTimeProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/MemoryContactService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/Organization.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Models/Priority.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/lab3a/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Views/Contact/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3a/Views/Contact/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Views/Contact/Delete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3a/Views/Contact/Delete.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Views/Contact/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3a/Views/Contact/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Views/Contact/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3a/Views/Contact/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Views/Contact/Update.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3a/Views/Contact/Update.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3a/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3a/Views/Shared/_Layout.cshtml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,12 +130,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Lab1/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lab1/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lab1/wwwroot/lib/jquery/dist/jquery.min.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lab3b/Controllers/AlbumController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Github Repos/ASP.NET-CORE-LAB/lab3b/Controllers/AlbumController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lab3b/Views/Album/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lab3b/Views/Album/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Github Repos/ASP.NET-CORE-LAB/lab3b/Views/Album/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Github Repos/ASP.NET-CORE-LAB/lab3b/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -53,28 +153,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\kuba7\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\kuba7\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\kuba7\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\kuba7\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\kuba7\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\kuba7\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.lab3b">
+}]]></component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.lab3a">
     <configuration name="Lab1" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Lab1/Lab1.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -286,6 +388,6 @@
     <MESSAGE value="refactored album&#10;todo: songlist" />
     <MESSAGE value="issue songlist" />
     <MESSAGE value="a" />
-    <option name="LAST_COMMIT_MESSAGE" value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
