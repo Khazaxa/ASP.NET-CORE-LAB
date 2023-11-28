@@ -1,0 +1,11 @@
+https://record-it.gitbook.io/programowanie-w-srodowisku-asp.net/laboratorium-1
+
+Apka Album
+zapisywana lokalnie w tabeli (AlbumData)
+z logowaniem do aplikacji
+Identity
+
+migracje:
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add InitialCreate
+dotnet ef database update
