@@ -1,0 +1,38 @@
+﻿@model Lab3zadanie.Models.Album
+@{
+    // Your existing Razor page directives and setup
+}
+<h1>Album @Model.Id Details</h1>
+<table class="table">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Artist/Band
+        </th>
+        <th>
+            Genre
+        </th>
+        <th>
+            Release Year
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            @Model.Title
+        </td>
+        <td>
+            @Model.Artist
+        </td>
+        <td>
+            @Model.Genre
+        </td>
+        <td>
+            @Model.ReleaseYear
+        </td>
+    </tr>
+
+</table>
+<a class="btn btn-primary" asp-action="Index">Back</a>
