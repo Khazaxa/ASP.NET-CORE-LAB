@@ -15,7 +15,7 @@ namespace Lab_3.Controllers
         }
         public IActionResult Index()
         {
-            return View(_contactService.FindAll());
+            return View("Index", _contactService.FindAll());
         }
 
         public IActionResult PagedIndex(int page = 1, int size = 2)
@@ -113,7 +113,15 @@ namespace Lab_3.Controllers
 
         public IActionResult Details(int id)
         {
-            return View(_contactService.FindById(id));
+            var model = _contactService;
+            if(model == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                 return View(_contactService.FindById(id));
+            }
         }
     }
 }
