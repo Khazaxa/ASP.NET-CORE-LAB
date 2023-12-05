@@ -11,6 +11,7 @@ namespace Lab_3.Models
         {
             _dateTimeProvider = dateTimeProvider;
         }
+
         public int Add(Contact item)
         {
             int id = _items.Keys.Count != 0 ? _items.Keys.Max() : 0;
