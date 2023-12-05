@@ -43,15 +43,15 @@ namespace Data
             var passwordHasher = new PasswordHasher<IdentityUser>();
             var user = new IdentityUser()
             {
-                UserName = "Edmund",
-                NormalizedUserName = "EDMUND",
-                Email = "edmund@wp.pl",
-                NormalizedEmail = "EDMUND@WP.PL",
+                UserName = "adam",
+                NormalizedUserName = "ADAM",
+                Email = "adam@wp.pl",
+                NormalizedEmail = "ADAM@WP.PL",
                 EmailConfirmed = true,
                 Id = Guid.NewGuid().ToString()
             };
 
-            user.PasswordHash = passwordHasher.HashPassword(user, "Edmund29!");
+            user.PasswordHash = passwordHasher.HashPassword(user, "123");
 
             modelBuilder.Entity<IdentityUser>()
                 .HasData(
