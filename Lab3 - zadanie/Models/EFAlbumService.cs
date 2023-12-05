@@ -42,19 +42,16 @@ namespace Lab3zadanie.Models
             return find != null ? AlbumMapper.FromEntity(find) : null;
         }
 
-        public List<SongEntity> GetSongs(string albumTitle)
-        {
-            return _context.Songs.Where(s => s.Album.Title == albumTitle).ToList();
-        }
-
-        public List<SongEntity> GetSongs()
-        {
-            return _context.Songs.ToList();
-        }
-
         public void Update(Album album)
         {
             _context.Albums.Update(AlbumMapper.ToEntity(album));
+            _context.SaveChanges();
+        }
+
+        public void AddSong(SongList song)
+        {
+            var songEntity = SongMapper.ToEntity(song);
+            _context.Songs.Add(songEntity);
             _context.SaveChanges();
         }
 

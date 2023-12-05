@@ -29,7 +29,7 @@ namespace Lab3zadanie.Models
         [DisplayName("Genre")]
         public string Genre { get; set; }
 
-        public List<SelectListItem> SongList { get; set; }
+        public ICollection<SongList> SongList { get; set; }
 
 
 

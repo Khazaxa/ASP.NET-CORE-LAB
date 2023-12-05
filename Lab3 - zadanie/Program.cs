@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using AlbumData;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-    
+
 namespace Lab3zadanie
 {
     public class Program

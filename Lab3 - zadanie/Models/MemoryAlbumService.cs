@@ -6,7 +6,9 @@ namespace Lab3zadanie.Models
     public class MemoryAlbumService : IAlbumService
     {
         static readonly Dictionary<int, Album> _albums = new Dictionary<int, Album>();
+        static readonly Dictionary<int, SongList> _songs = new Dictionary<int, SongList>();
         static int id = 1;
+        static int songId = 1;
 
         public int Add(Album album)
         {
@@ -32,22 +34,18 @@ namespace Lab3zadanie.Models
             return album;
         }
 
-        public List<SongEntity> GetSongs()
-        {
-            throw new NotImplementedException();
-        }
-
-        public object Select(Func<object, SelectListItem> value)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Update(Album album)
         {
             if (_albums.ContainsKey(album.Id))
             {
                 _albums[album.Id] = album;
             }
+        }
+
+        public void AddSong(SongList song)
+        {
+            song.Id = songId++;
+            _songs.Add(song.Id, song);
         }
     }
 }

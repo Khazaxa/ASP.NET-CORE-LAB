@@ -12,6 +12,9 @@
             Artist/Band
         </th>
         <th>
+            Song List
+        </th>
+        <th>
             Chart Position
         </th>
         <th>
@@ -31,6 +34,9 @@
         </td>
         <td>
             @Model.Artist
+        </td>
+        <td>
+            <a asp-controller="Songs" asp-action="Index" asp-route-id="@Model.Id" class="btn btn-secondary">List</a>
         </td>
         <td>
             @Model.ChartPosition

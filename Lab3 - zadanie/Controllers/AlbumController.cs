@@ -22,13 +22,6 @@ namespace Lab3zadanie.Controllers
         public IActionResult Create()
         {
             var model = new Album();
-            var songs = _albumService.GetSongs();
-
-            model.SongList = songs.Select(s => new SelectListItem
-            {
-                Value = s.Id.ToString(),
-                Text = s.Title
-            }).ToList();
             return View(model);
         }
 
