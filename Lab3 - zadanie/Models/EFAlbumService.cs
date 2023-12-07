@@ -16,7 +16,7 @@ namespace Lab3zadanie.Models
             _context = appDbContext;
         }
 
-        public int Add(AlbumEntity albumEntity) // Zmiana na AlbumEntity
+        public int Add(AlbumEntity albumEntity)
         {
             var e = _context.Albums.Add(albumEntity);
             _context.SaveChanges();

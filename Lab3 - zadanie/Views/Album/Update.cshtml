@@ -2,7 +2,7 @@
 
 <h1>Edit an Album</h1>
 <form asp-controller="Album" asp-action="Update" method="post">
-    <input type="hidden" asp-for="AlbumId" /> <!-- Dodane ukryte pole dla Id -->
+    <input type="hidden" asp-for="AlbumId" />
 
     <div class="mb-3">
         <label asp-for="Title">Title</label>
@@ -10,9 +10,9 @@
         <span class="text-danger" asp-validation-for="Title"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Band">Artist/Band</label> <!-- Poprawka tutaj -->
-        <input class="form-control" asp-for="Band" /> <!-- i tutaj -->
-        <span class="text-danger" asp-validation-for="Band"></span> <!-- i tutaj -->
+        <label asp-for="Band">Artist/Band</label>
+        <input class="form-control" asp-for="Band" />
+        <span class="text-danger" asp-validation-for="Band"></span>
     </div>
     <div class="mb-3">
         <label asp-for="ChartPosition">Chart Position</label>

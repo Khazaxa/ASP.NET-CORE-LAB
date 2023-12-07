@@ -33,8 +33,8 @@ namespace AlbumData
                 .HasForeignKey(s => s.AlbumId);
 
             modelBuilder.Entity<AlbumEntity>().HasData(
-                new AlbumEntity { AlbumId = 1, Title = "Thriller", Band = "Michael Jackson", Genre = "Pop", ReleaseYear = 1982 },
-                new AlbumEntity { AlbumId = 2, Title = "Back in Black", Band = "AC/DC", Genre = "Rock", ReleaseYear = 1980 }
+                new AlbumEntity { AlbumId = 1, Title = "Thriller", Band = "Michael Jackson", Genre = "Pop", ChartPosition = "2", Duration = 122, ReleaseYear = 1982 },
+                new AlbumEntity { AlbumId = 2, Title = "Back in Black", Band = "AC/DC", Genre = "Rock", ChartPosition = "3", Duration = 132, ReleaseYear = 1980 }
             );
 
             modelBuilder.Entity<SongEntity>().HasData(

@@ -41,33 +41,52 @@ namespace Lab3zadanie.Controllers
         [HttpGet]
         public IActionResult Update(int id)
         {
-            var albumEntity = _albumService.FindById(id);
-            if (albumEntity == null)
+            var album = _albumService.FindById(id);
+            if (album == null)
             {
                 return NotFound();
             }
 
-            var model = AlbumMapper.FromEntity(albumEntity);
+            var model = new Album
+            {
+                AlbumId = album.AlbumId,
+                Title = album.Title,
+                Band = album.Band,
+                ChartPosition = album.ChartPosition,
+                ReleaseYear = album.ReleaseYear,
+                Duration = album.Duration,
+                Genre = album.Genre
+            };
+
             return View(model);
         }
+
 
         [HttpPost]
         public IActionResult Update(Album model)
         {
             if (ModelState.IsValid)
             {
-                var albumEntity = AlbumMapper.ToEntity(model);
                 var existingAlbum = _albumService.FindById(model.AlbumId);
                 if (existingAlbum == null)
                 {
                     return NotFound();
                 }
 
-                _albumService.Update(albumEntity);
+                existingAlbum.Title = model.Title;
+                existingAlbum.Band = model.Band;
+                existingAlbum.ChartPosition = model.ChartPosition;
+                existingAlbum.ReleaseYear = model.ReleaseYear;
+                existingAlbum.Duration = model.Duration;
+                existingAlbum.Genre = model.Genre;
+
+                _albumService.Update(existingAlbum);
+
                 return RedirectToAction("Index");
             }
             return View(model);
         }
+
 
         [HttpGet]
         public IActionResult Delete(int id)

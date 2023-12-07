@@ -53,6 +53,8 @@ namespace AlbumData.Migrations
                         {
                             AlbumId = 1,
                             Band = "Michael Jackson",
+                            ChartPosition = "2",
+                            Duration = 122,
                             Genre = "Pop",
                             ReleaseYear = 1982,
                             Title = "Thriller"
@@ -61,6 +63,8 @@ namespace AlbumData.Migrations
                         {
                             AlbumId = 2,
                             Band = "AC/DC",
+                            ChartPosition = "3",
+                            Duration = 132,
                             Genre = "Rock",
                             ReleaseYear = 1980,
                             Title = "Back in Black"

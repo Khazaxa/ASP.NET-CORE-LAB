@@ -57,8 +57,8 @@ namespace AlbumData.Migrations
                 columns: new[] { "AlbumId", "Band", "ChartPosition", "Duration", "Genre", "ReleaseYear", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Michael Jackson", null, null, "Pop", 1982, "Thriller" },
-                    { 2, "AC/DC", null, null, "Rock", 1980, "Back in Black" }
+                    { 1, "Michael Jackson", "2", 122, "Pop", 1982, "Thriller" },
+                    { 2, "AC/DC", "3", 132, "Rock", 1980, "Back in Black" }
                 });
 
             migrationBuilder.InsertData(
