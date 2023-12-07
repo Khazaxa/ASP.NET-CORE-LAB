@@ -1,6 +1,5 @@
 ﻿using AlbumData.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace AlbumData
 {
@@ -34,17 +33,16 @@ namespace AlbumData
                 .HasForeignKey(s => s.AlbumId);
 
             modelBuilder.Entity<AlbumEntity>().HasData(
-                new { AlbumId = 1, Title = "Eclipse", Band = "Lunar Echoes", ReleaseYear = 2023, Duration = TimeSpan.FromMinutes(45), ChartPosition = "Top 10", Genre = "Rock" },
-                new { AlbumId = 2, Title = "Night Sky", Band = "Star Harmony", ReleaseYear = 2022, Duration = TimeSpan.FromMinutes(50), ChartPosition = "Top 20", Genre = "Pop" }
+                new AlbumEntity { AlbumId = 1, Title = "Thriller", Band = "Michael Jackson", Genre = "Pop", ChartPosition = "2", Duration = 122, ReleaseYear = 1982 },
+                new AlbumEntity { AlbumId = 2, Title = "Back in Black", Band = "AC/DC", Genre = "Rock", ChartPosition = "3", Duration = 132, ReleaseYear = 1980 }
             );
-
 
             modelBuilder.Entity<SongEntity>().HasData(
-                new { Id = 1, Title = "Moonlight Sonata", Duration = TimeSpan.FromMinutes(4), AlbumId = 1, TrackNumber = 1 },
-                new { Id = 2, Title = "Starry Night", Duration = TimeSpan.FromMinutes(3), AlbumId = 2, TrackNumber = 1 }
+                new SongEntity { Id = 1, Title = "Beat It", Duration = 258, AlbumId = 1, TrackNumber = 1 },
+                new SongEntity { Id = 2, Title = "Billie Jean", Duration = 294, AlbumId = 1, TrackNumber = 2 },
+                new SongEntity { Id = 3, Title = "Hells Bells", Duration = 312, AlbumId = 2, TrackNumber = 1 },
+                new SongEntity { Id = 4, Title = "Back in Black", Duration = 255, AlbumId = 2, TrackNumber = 2 }
             );
-
-
         }
     }
 }

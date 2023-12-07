@@ -3,13 +3,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Lab3zadanie.Models
 {
-    public class SongList
+    public class Song
     {
         [HiddenInput]
         public int Id { get; set; }
+
         [Required]
         public string Title { get; set; }
+
         public int Duration { get; set; }
-        public object AlbumId { get; internal set; }
+
+        public int AlbumId { get; set; }
     }
 }

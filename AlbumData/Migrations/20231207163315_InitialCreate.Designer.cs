@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AlbumData.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231128204557_InitialCreate")]
+    [Migration("20231207163315_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -33,8 +33,8 @@ namespace AlbumData.Migrations
                     b.Property<string>("ChartPosition")
                         .HasColumnType("TEXT");
 
-                    b.Property<TimeSpan?>("Duration")
-                        .HasColumnType("TEXT");
+                    b.Property<int?>("Duration")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Genre")
                         .IsRequired()
@@ -55,22 +55,22 @@ namespace AlbumData.Migrations
                         new
                         {
                             AlbumId = 1,
-                            Band = "Lunar Echoes",
-                            ChartPosition = "Top 10",
-                            Duration = new TimeSpan(0, 0, 45, 0, 0),
-                            Genre = "Rock",
-                            ReleaseYear = 2023,
-                            Title = "Eclipse"
+                            Band = "Michael Jackson",
+                            ChartPosition = "2",
+                            Duration = 122,
+                            Genre = "Pop",
+                            ReleaseYear = 1982,
+                            Title = "Thriller"
                         },
                         new
                         {
                             AlbumId = 2,
-                            Band = "Star Harmony",
-                            ChartPosition = "Top 20",
-                            Duration = new TimeSpan(0, 0, 50, 0, 0),
-                            Genre = "Pop",
-                            ReleaseYear = 2022,
-                            Title = "Night Sky"
+                            Band = "AC/DC",
+                            ChartPosition = "3",
+                            Duration = 132,
+                            Genre = "Rock",
+                            ReleaseYear = 1980,
+                            Title = "Back in Black"
                         });
                 });
 
@@ -83,11 +83,12 @@ namespace AlbumData.Migrations
                     b.Property<int>("AlbumId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<TimeSpan>("Duration")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Duration")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
                         .IsRequired()
+                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("TrackNumber")
@@ -97,24 +98,40 @@ namespace AlbumData.Migrations
 
                     b.HasIndex("AlbumId");
 
-                    b.ToTable("Song List");
+                    b.ToTable("Songs");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             AlbumId = 1,
-                            Duration = new TimeSpan(0, 0, 4, 0, 0),
-                            Title = "Moonlight Sonata",
+                            Duration = 258,
+                            Title = "Beat It",
                             TrackNumber = 1
                         },
                         new
                         {
                             Id = 2,
+                            AlbumId = 1,
+                            Duration = 294,
+                            Title = "Billie Jean",
+                            TrackNumber = 2
+                        },
+                        new
+                        {
+                            Id = 3,
                             AlbumId = 2,
-                            Duration = new TimeSpan(0, 0, 3, 0, 0),
-                            Title = "Starry Night",
+                            Duration = 312,
+                            Title = "Hells Bells",
                             TrackNumber = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AlbumId = 2,
+                            Duration = 255,
+                            Title = "Back in Black",
+                            TrackNumber = 2
                         });
                 });
 

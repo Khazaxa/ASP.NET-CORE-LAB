@@ -23,14 +23,14 @@ namespace AlbumData.Entities
         [Required]
         public string Genre { get; set; } 
 
-        public virtual ICollection<SongEntity> Songs { get; set; }
+        public virtual List<SongEntity> Songs { get; set; }
 
         public string? ChartPosition { get; set; }
 
-        [Range(1900, 2023)]
         public int? ReleaseYear { get; set; }
 
-        public TimeSpan? Duration { get; set; }
+        [Display(Name = "Duration in minutes")]
+        public int? Duration { get; set; }
     }
 
 }

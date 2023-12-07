@@ -1,4 +1,4 @@
-﻿@model Lab3zadanie.Models.SongList
+﻿@model Lab3zadanie.Models.Song
 
 @{
     Layout = "_Layout";
@@ -6,7 +6,7 @@
 
 <h2>Add Song</h2>
 
-<form asp-action="Create" asp-controller="Songs" method="post">
+<form asp-action="CreateSong" asp-controller="Album" method="post">
     <input type="hidden" asp-for="AlbumId" />
 
     <div class="form-group">
@@ -20,7 +20,8 @@
         <input asp-for="Duration" class="form-control" />
         <span asp-validation-for="Duration" class="text-danger"></span>
     </div>
-
+    <br/>
     <button type="submit" class="btn btn-primary">Add</button>
 </form>
-<a class="btn btn-primary" asp-controller="Songs" asp-action="Index" asp-route-id="@Model.AlbumId">Back</a>
+<br/>
+<a class="btn btn-primary" asp-controller="Album" asp-action="Details" asp-route-id="@Model.AlbumId">Back</a>

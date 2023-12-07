@@ -1,7 +1,5 @@
 ﻿using AlbumData.Entities;
 using Lab3zadanie.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Lab3zadanie.Models
@@ -12,14 +10,14 @@ namespace Lab3zadanie.Models
         {
             return new AlbumEntity()
             {
-                AlbumId = model.Id, // Może być usunięte, jeśli baza danych generuje ID automatycznie
+                AlbumId = model.AlbumId,
                 Title = model.Title,
-                Band = model.Artist,
-                ChartPosition = model.ChartPosition.ToString(),
+                Band = model.Band,
+                ChartPosition = model.ChartPosition,
                 ReleaseYear = model.ReleaseYear,
-                Duration = TimeSpan.FromMinutes(model.Duration),
+                Duration = model.Duration,
                 Genre = model.Genre,
-                // Songs - jeśli chcesz je mapować, trzeba przekształcić SongList na ICollection<SongEntity>
+                Songs = model.Songs?.Select(s => SongMapper.ToEntity(s)).ToList()
             };
         }
 
@@ -27,15 +25,20 @@ namespace Lab3zadanie.Models
         {
             return new Album()
             {
-                Id = entity.AlbumId,
+                AlbumId = entity.AlbumId,
                 Title = entity.Title,
-                Artist = entity.Band,
+                Band = entity.Band,
                 ChartPosition = entity.ChartPosition,
                 ReleaseYear = entity.ReleaseYear,
-                Duration = (int)(entity.Duration?.TotalMinutes ?? 0),
+                Duration = entity.Duration,
                 Genre = entity.Genre,
-                // SongList - jeśli chcesz je mapować, trzeba przekształcić Songs na List<SelectListItem>
+                Songs = entity.Songs?.Select(s => SongMapper.FromEntity(s)).ToList()
             };
+        }
+
+        internal static object FromEntity(Album albumEntity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

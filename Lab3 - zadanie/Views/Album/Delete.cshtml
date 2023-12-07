@@ -1,12 +1,9 @@
-﻿@model Album
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<h1>Are you sure you want to delete album: @Model.Title</h1>
-<form asp-controller="Album" asp-action="Delete">
-    <input asp-for="Id" />
-    <button class="btn btn-danger" type="submit">Yes</button>
-    <a class="btn btn-primary" asp-action="Index">No</a>
+﻿@model Lab3zadanie.Models.Album
+
+<h1>Are you sure you want to delete the album: @Model.Title?</h1>
+
+<form asp-controller="Album" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="AlbumId" />
+    <button class="btn btn-danger" type="submit">Yes, Delete Album</button>
 </form>
+<a class="btn btn-primary" asp-action="Index">No, Go Back</a>

@@ -4,24 +4,24 @@ namespace Lab3zadanie.Models
 {
     public static class SongMapper
     {
-        public static SongEntity ToEntity(SongList song)
+        public static SongEntity ToEntity(Song song)
         {
             return new SongEntity
             {
                 Id = song.Id,
                 Title = song.Title,
-                Duration = TimeSpan.FromMinutes(song.Duration),
+                Duration = song.Duration,
                 AlbumId = (int)song.AlbumId
             };
         }
 
-        public static SongList FromEntity(SongEntity entity)
+        public static Song FromEntity(SongEntity entity)
         {
-            return new SongList
+            return new Song
             {
                 Id = entity.Id,
                 Title = entity.Title,
-                Duration = (int)entity.Duration.TotalMinutes,
+                Duration = entity.Duration,
                 AlbumId = entity.AlbumId
             };
         }
