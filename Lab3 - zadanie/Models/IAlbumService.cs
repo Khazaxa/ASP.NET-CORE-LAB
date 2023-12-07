@@ -1,16 +1,13 @@
 ﻿using AlbumData.Entities;
-using Lab3zadanie.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Lab3zadanie.Models
 {
     public interface IAlbumService
     {
-        int Add(Album album);
+        int Add(AlbumEntity albumEntity);
+        void Update(AlbumEntity albumEntity);
         void Delete(int id);
-        void Update(Album album);
-        List<Album> FindAll();
-        Album? FindById(int id);
-        void AddSong(SongList song);
+        AlbumEntity? FindById(int id);
+        List<AlbumEntity> FindAll();
     }
 }

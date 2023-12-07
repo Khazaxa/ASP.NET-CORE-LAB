@@ -35,12 +35,12 @@ namespace Lab3zadanie.Controllers
         [HttpGet]
         public IActionResult Create(int albumId)
         {
-            var model = new SongList { AlbumId = albumId };
+            var model = new Song { AlbumId = albumId };
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult Create(SongList model)
+        public IActionResult Create(Song model)
         {
             if (ModelState.IsValid)
             {

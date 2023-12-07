@@ -1,42 +1,35 @@
 ﻿@model List<Lab3zadanie.Models.Album>
-@{
-    // Your existing Razor page directives and setup
-}
+
 @if (Model.Count > 0)
 {
     <h1>List of Albums</h1>
-    <a class="btn btn-primary" asp-controller="Album" asp-action="Create">Add an album</a>
+    <a class="btn btn-primary" asp-controller="Album" asp-action="Create">Add an Album</a>
     <table class="table">
-        <tr>
-            <th>
-                Title
-            </th>
-            <th>
-                Artist/Band
-            </th>
-            <th>
-                Actions
-            </th>
-        </tr>
-        @foreach (var item in Model)
-        {
+        <thead>
             <tr>
-                <td>
-                    @item.Title
-                </td>
-                <td>
-                    @item.Artist
-                </td>
-                <td>
-                    <a class="btn btn-outline-secondary" asp-controller="Album" asp-action="Update" asp-route-id=@item.Id>Edit</a>
-                    <a class="btn btn-outline-info" asp-controller="Album" asp-action="Details" asp-route-id=@item.Id>Details</a>
-                    <a class="btn btn-outline-danger" asp-controller="Album" asp-action="Delete" asp-route-id=@item.Id>Delete</a>
-                </td>
+                <th>Title</th>
+                <th>Artist/Band</th>
+                <th>Actions</th>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Band</td>
+                    <td>
+                        <a class="btn btn-outline-secondary" asp-controller="Album" asp-action="Update" asp-route-id="@item.AlbumId">Edit</a>
+                        <a class="btn btn-outline-info" asp-controller="Album" asp-action="Details" asp-route-id="@item.AlbumId">Details</a>
+                        <a class="btn btn-outline-danger" asp-controller="Album" asp-action="Delete" asp-route-id="@item.AlbumId"
+                           onclick="return confirm('Are you sure you want to delete this album?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
 }
 else
 {
-    <p class="alert-dark">No albums to display.</p>
+    <p class="alert alert-info">No albums to display.</p>
 }

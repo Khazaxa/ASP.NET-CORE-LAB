@@ -1,6 +1,7 @@
 ﻿using Lab3zadanie.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using AlbumData.Entities;
+using System.Linq;
 
 namespace Lab3zadanie.Controllers
 {
@@ -15,14 +16,14 @@ namespace Lab3zadanie.Controllers
 
         public IActionResult Index()
         {
-            return View(_albumService.FindAll());
+            var albums = _albumService.FindAll().Select(AlbumMapper.FromEntity).ToList();
+            return View(albums);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            var model = new Album();
-            return View(model);
+            return View(new Album());
         }
 
         [HttpPost]
@@ -30,16 +31,24 @@ namespace Lab3zadanie.Controllers
         {
             if (ModelState.IsValid)
             {
-                _albumService.Add(model);
+                var albumEntity = AlbumMapper.ToEntity(model);
+                _albumService.Add(albumEntity);
                 return RedirectToAction("Index");
             }
-            return View();
+            return View(model);
         }
 
         [HttpGet]
         public IActionResult Update(int id)
         {
-            return View(_albumService.FindById(id));
+            var albumEntity = _albumService.FindById(id);
+            if (albumEntity == null)
+            {
+                return NotFound();
+            }
+
+            var model = AlbumMapper.FromEntity(albumEntity);
+            return View(model);
         }
 
         [HttpPost]
@@ -47,7 +56,14 @@ namespace Lab3zadanie.Controllers
         {
             if (ModelState.IsValid)
             {
-                _albumService.Update(model);
+                var albumEntity = AlbumMapper.ToEntity(model);
+                var existingAlbum = _albumService.FindById(model.AlbumId);
+                if (existingAlbum == null)
+                {
+                    return NotFound();
+                }
+
+                _albumService.Update(albumEntity);
                 return RedirectToAction("Index");
             }
             return View(model);
@@ -56,19 +72,38 @@ namespace Lab3zadanie.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            return View(_albumService.FindById(id));
+            var album = _albumService.FindById(id);
+            if (album == null)
+            {
+                return NotFound();
+            }
+
+            return View(AlbumMapper.FromEntity(album));
         }
 
-        [HttpPost]
-        public IActionResult Delete(Album model)
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
         {
-            _albumService.Delete(model.Id);
+            var existingAlbum = _albumService.FindById(id);
+            if (existingAlbum == null)
+            {
+                return NotFound();
+            }
+
+            _albumService.Delete(id);
             return RedirectToAction("Index");
         }
 
         public IActionResult Details(int id)
         {
-            return View(_albumService.FindById(id));
+            var albumEntity = _albumService.FindById(id);
+            if (albumEntity == null)
+            {
+                return NotFound();
+            }
+
+            var model = AlbumMapper.FromEntity(albumEntity);
+            return View(model);
         }
     }
 }

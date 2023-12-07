@@ -1,7 +1,10 @@
 ﻿using AlbumData;
 using AlbumData.Entities;
 using Lab3zadanie.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab3zadanie.Models
 {
@@ -13,47 +16,57 @@ namespace Lab3zadanie.Models
             _context = appDbContext;
         }
 
-        public int Add(Album album)
+        public int Add(AlbumEntity albumEntity) // Zmiana na AlbumEntity
         {
-            var e = _context.Albums.Add(AlbumMapper.ToEntity(album));
+            var e = _context.Albums.Add(albumEntity);
             _context.SaveChanges();
-            int id = e.Entity.AlbumId; 
-            return id;
+            return e.Entity.AlbumId;
         }
 
         public void Delete(int id)
         {
-            AlbumEntity? find = _context.Albums.Find(id); 
-            if (find != null)
+            var album = _context.Albums.Find(id);
+            if (album != null)
             {
-                _context.Albums.Remove(find);
+                _context.Albums.Remove(album);
                 _context.SaveChanges();
             }
         }
 
-        public List<Album> FindAll()
+        public List<AlbumEntity> FindAll()
         {
-            return _context.Albums.Select(e => AlbumMapper.FromEntity(e)).ToList();
+            return _context.Albums
+                           .Include(a => a.Songs)
+                           .ToList();
         }
 
-        public Album? FindById(int id)
+        public AlbumEntity? FindById(int id)
         {
-            AlbumEntity? find = _context.Albums.Find(id);
-            return find != null ? AlbumMapper.FromEntity(find) : null;
+            return _context.Albums
+                                .Include(a => a.Songs)
+                                .FirstOrDefault(a => a.AlbumId == id);
         }
 
-        public void Update(Album album)
+        public void Update(AlbumEntity albumEntity)
         {
-            _context.Albums.Update(AlbumMapper.ToEntity(album));
-            _context.SaveChanges();
+            var existingAlbum = _context.Albums.Find(albumEntity.AlbumId);
+            if (existingAlbum != null)
+            {
+                _context.Entry(existingAlbum).CurrentValues.SetValues(albumEntity);
+                _context.SaveChanges();
+            }
         }
 
-        public void AddSong(SongList song)
+        public void AddSong(Song song)
         {
+            if (song.AlbumId <= 0)
+            {
+                throw new InvalidOperationException("Song must have a valid AlbumId");
+            }
+
             var songEntity = SongMapper.ToEntity(song);
             _context.Songs.Add(songEntity);
             _context.SaveChanges();
         }
-
     }
 }

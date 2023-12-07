@@ -1,56 +1,35 @@
 ﻿@model Lab3zadanie.Models.Album
-@{
-    // Your existing Razor page directives and setup
-}
+
 <h1>Album "@Model.Title" Details</h1>
+
 <table class="table">
     <tr>
-        <th>
-            Title
-        </th>
-        <th>
-            Artist/Band
-        </th>
-        <th>
-            Song List
-        </th>
-        <th>
-            Chart Position
-        </th>
-        <th>
-            Release Year
-        </th>
-        <th>
-            Duration
-        </th>
-        <th>
-            Genre
-        </th>
+        <th>Title</th>
+        <th>Artist/Band</th>
+        <th>Chart Position</th>
+        <th>Release Year</th>
+        <th>Duration (Minutes)</th>
+        <th>Genre</th>
     </tr>
-
     <tr>
-        <td>
-            @Model.Title
-        </td>
-        <td>
-            @Model.Artist
-        </td>
-        <td>
-            <a asp-controller="Songs" asp-action="Index" asp-route-id="@Model.Id" class="btn btn-secondary">List</a>
-        </td>
-        <td>
-            @Model.ChartPosition
-        </td>
-        <td>
-            @Model.ReleaseYear
-        </td>
-        <td>
-            @Model.Duration
-        </td>
-        <td>
-            @Model.Genre
-        </td>
+        <td>@Model.Title</td>
+        <td>@Model.Band</td>
+        <td>@Model.ChartPosition</td>
+        <td>@Model.ReleaseYear</td>
+        <td>@Model.Duration</td>
+        <td>@Model.Genre</td>
     </tr>
-
 </table>
+
+@if (Model.Songs != null && Model.Songs.Any())
+{
+    <h2>Songs</h2>
+    <ul>
+        @foreach (var song in Model.Songs)
+        {
+            <li>@song.Title - @song.Duration min</li>
+        }
+    </ul>
+}
+
 <a class="btn btn-primary" asp-action="Index">Back</a>
