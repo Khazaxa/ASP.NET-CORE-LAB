@@ -1,8 +1,8 @@
 ﻿using Lab3zadanie.Models;
 using Microsoft.AspNetCore.Mvc;
-using AlbumData.Entities;
+using Lab3___zadanieContextConnection.Entities;
 using System.Linq;
-using AlbumData;
+using Lab3___zadanieContextConnection;
 
 namespace Lab3zadanie.Controllers
 {

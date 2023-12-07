@@ -1,5 +1,5 @@
-﻿using AlbumData;
-using AlbumData.Entities;
+﻿using Lab3___zadanieContextConnection;
+using Lab3___zadanieContextConnection.Entities;
 using Lab3zadanie.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
