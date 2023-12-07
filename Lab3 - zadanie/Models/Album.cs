@@ -19,7 +19,6 @@ namespace Lab3zadanie.Models
 
         public string? ChartPosition { get; set; }
 
-        [Range(1900, 2023)]
         [Display(Name = "Release Year")]
         public int? ReleaseYear { get; set; }
 

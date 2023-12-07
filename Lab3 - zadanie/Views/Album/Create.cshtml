@@ -15,9 +15,14 @@
         <span class="text-danger" asp-validation-for="Band"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="ChartPosition ">Chart Position</label>
-        <input class="form-control" asp-for="ChartPosition " />
-        <span class="text-danger" asp-validation-for="ChartPosition "></span>
+        <label asp-for="Songs">Songs</label>
+        <input class="form-control" asp-for="Songs" />
+        <span class="text-danger" asp-validation-for="Songs"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ChartPosition">Chart Position</label>
+        <input class="form-control" asp-for="ChartPosition" />
+        <span class="text-danger" asp-validation-for="ChartPosition"></span>
     </div>
     <div class="mb-3">
         <label asp-for="ReleaseYear">Release Year</label>
@@ -31,7 +36,16 @@
     </div>
     <div class="mb-3">
         <label asp-for="Genre">Genre</label>
-        <input class="form-control" asp-for="Genre" />
+        <select asp-for="Genre" class="form-control">
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Classical">Classical</option>
+            <option value="HipHop">HipHop</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Country">Country</option>
+            <option value="Other">Other</option>
+        </select>
         <span class="text-danger" asp-validation-for="Genre"></span>
     </div>
     <div class="mb-3">
