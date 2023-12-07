@@ -31,19 +31,9 @@
     </div>
     <div class="mb-3">
         <label asp-for="Genre">Genre</label>
-        <select asp-for="Genre" class="form-control">
-            <option value="Rock">Rock</option>
-            <option value="Pop">Pop</option>
-            <option value="Jazz">Jazz</option>
-            <option value="Classical">Classical</option>
-            <option value="HipHop">HipHop</option>
-            <option value="Electronic">Electronic</option>
-            <option value="Country">Country</option>
-            <option value="Other">Other</option>
-        </select>
+        <input class="form-control" asp-for="Genre" />
         <span class="text-danger" asp-validation-for="Genre"></span>
     </div>
-
     <div class="mb-3">
         <button class="btn btn-primary" type="submit">Create</button>
         <button class="btn btn-danger" type="reset">Clear</button>
