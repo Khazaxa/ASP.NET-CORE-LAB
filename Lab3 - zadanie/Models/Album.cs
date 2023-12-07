@@ -7,6 +7,11 @@ namespace Lab3zadanie.Models
 {
     public class Album
     {
+        public Album()
+        {
+            Songs = new List<Song>();
+        }
+
         [HiddenInput]
         public int AlbumId { get; set; }
 

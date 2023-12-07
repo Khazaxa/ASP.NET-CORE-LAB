@@ -2,16 +2,19 @@
 using Microsoft.AspNetCore.Mvc;
 using AlbumData.Entities;
 using System.Linq;
+using AlbumData;
 
 namespace Lab3zadanie.Controllers
 {
     public class AlbumController : Controller
     {
         private readonly IAlbumService _albumService;
+        private readonly AppDbContext _context;
 
-        public AlbumController(IAlbumService albumService)
+        public AlbumController(IAlbumService albumService, AppDbContext context)
         {
             _albumService = albumService;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -124,5 +127,50 @@ namespace Lab3zadanie.Controllers
             var model = AlbumMapper.FromEntity(albumEntity);
             return View(model);
         }
+
+        [HttpGet]
+        public IActionResult CreateSong(int id)
+        {
+            var songModel = new Song { AlbumId = id };
+            return View(songModel);
+        }
+
+        [HttpPost]
+        public IActionResult CreateSong(Song model)
+        {
+            if (ModelState.IsValid)
+            {
+                var songEntity = new SongEntity
+                {
+                    Title = model.Title,
+                    Duration = model.Duration,
+                    AlbumId = model.AlbumId
+                };
+
+                _context.Songs.Add(songEntity);
+                _context.SaveChanges();
+
+                return RedirectToAction("Details", new { id = model.AlbumId });
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteSong(int id, int albumId)
+        {
+            var song = _context.Songs.Find(id);
+            if (song == null)
+            {
+                return NotFound();
+            }
+
+            _context.Songs.Remove(song);
+            _context.SaveChanges();
+
+            return RedirectToAction("Details", new { id = albumId });
+        }
+
+
     }
 }
