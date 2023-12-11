@@ -3,7 +3,7 @@
 Aplikacja ma za zadanie zarządzanie albumami muzycznymi, przeglądanie spisów piosenek oraz śledzenie notowań.
 
 1. Wykorzystane Technologie :
-    1.  ASP.NET 7.0: Wyjaśnienie, dlaczego wybrano tę wersję, jej zalety.
+    1.  .NET 7.0
     2.  Baza danych SQLite: Przetrzymuje dane dotyczące albumów muzycznych oraz piosenek, jakie się w nich znajdują.
     3.  xUnit: Testy jednostkowe zostały napisane w xUnit, tak jak na zajęciach.
 
@@ -28,3 +28,7 @@ Aplikacja ma za zadanie zarządzanie albumami muzycznymi, przeglądanie spisów 
     11. W widoku "Details" każdy album może dodać piosenki, które się w nim znajdują, oraz je usunąć
 
 4. Dodałem Unit testy napisane w xUnit, które sprawdzają poprawność działania AlbumController
+
+![image](https://github.com/Khazaxa/ASP.NET-CORE-LAB/assets/96346556/02129c54-bf7e-4f88-a922-90d8d739dd86)
+
+![image](https://github.com/Khazaxa/ASP.NET-CORE-LAB/assets/96346556/918ebd08-16e1-41db-bbfe-2dca84a9215a)
