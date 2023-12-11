@@ -27,4 +27,8 @@
     <ProjectReference Include="..\AlbumData\AlbumData.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Data\" />
+  </ItemGroup>
+
 </Project>

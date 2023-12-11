@@ -71,7 +71,6 @@ namespace Lab3___zadanieContextConnection
                 ConcurrencyStamp = USER_ROLE_ID
             });
 
-            // Utworzenie użytkownika
             string USER_ID = Guid.NewGuid().ToString();
             var user = new IdentityUser
             {
@@ -83,11 +82,10 @@ namespace Lab3___zadanieContextConnection
             };
 
             PasswordHasher<IdentityUser> ph1 = new PasswordHasher<IdentityUser>();
-            user.PasswordHash = ph1.HashPassword(user, "userPassword123!");
+            user.PasswordHash = ph1.HashPassword(user, "user123");
 
             modelBuilder.Entity<IdentityUser>().HasData(user);
 
-            // Przypisanie roli user do użytkownika
             modelBuilder.Entity<IdentityUserRole<string>>()
                 .HasData(new IdentityUserRole<string>
                 {

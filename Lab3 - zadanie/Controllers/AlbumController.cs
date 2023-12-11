@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Lab3___zadanieContextConnection.Entities;
 using System.Linq;
 using Lab3___zadanieContextConnection;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Lab3zadanie.Controllers
 {
+    [Authorize]
     public class AlbumController : Controller
     {
         private readonly IAlbumService _albumService;

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Lab3___zadanieContextConnection.Migrations
+namespace AlbumData.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -17,7 +17,7 @@ namespace Lab3___zadanieContextConnection.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.13");
 
-            modelBuilder.Entity("AlbumData.Entities.AlbumEntity", b =>
+            modelBuilder.Entity("Lab3___zadanieContextConnection.Entities.AlbumEntity", b =>
                 {
                     b.Property<int>("AlbumId")
                         .ValueGeneratedOnAdd()
@@ -71,7 +71,7 @@ namespace Lab3___zadanieContextConnection.Migrations
                         });
                 });
 
-            modelBuilder.Entity("AlbumData.Entities.SongEntity", b =>
+            modelBuilder.Entity("Lab3___zadanieContextConnection.Entities.SongEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -160,15 +160,15 @@ namespace Lab3___zadanieContextConnection.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "180c38ac-6a12-45f5-b671-2697ea09f376",
-                            ConcurrencyStamp = "180c38ac-6a12-45f5-b671-2697ea09f376",
+                            Id = "8de183e9-caef-4dbc-be61-81d78bff5aee",
+                            ConcurrencyStamp = "8de183e9-caef-4dbc-be61-81d78bff5aee",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "9039b191-838f-4d4d-a813-b7a233b688a1",
-                            ConcurrencyStamp = "9039b191-838f-4d4d-a813-b7a233b688a1",
+                            Id = "57ec43a7-a1dc-4b2b-bc8b-16842c50c2b3",
+                            ConcurrencyStamp = "57ec43a7-a1dc-4b2b-bc8b-16842c50c2b3",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -263,31 +263,31 @@ namespace Lab3___zadanieContextConnection.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "bc236984-8559-4422-a33d-01be3275500a",
+                            Id = "a88f6ee2-210a-4787-81f6-ec5b888fe685",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "afd622ac-b8b7-4b4e-8adf-53a95956b037",
+                            ConcurrencyStamp = "44f526cc-3094-4e5a-a1d3-f88d6486acc2",
                             Email = "adam@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAELIXGKsYRbKvhBIaA5HiZhSPOhY1oRfDKa+XscPwFBwRwPXDAK0TGItqQW8Mf8kn3Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGDt/8UC6ih/UGJCPeYTRSicBZvwSm3wXQ9bsnaA1k/wJASxNVvJi0cp1Ap44MopFg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "69ba5e47-42d4-49b4-8cb2-6c9412c6685b",
+                            SecurityStamp = "157337ad-de6c-4cc9-8a84-3de96d12e2df",
                             TwoFactorEnabled = false,
                             UserName = "adam"
                         },
                         new
                         {
-                            Id = "9957226f-91fb-4caf-89aa-e0d356b0a9dc",
+                            Id = "eb1996d4-0cd6-4b12-a208-f8c9cc8dbfe5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "820d8ca6-85fe-45bb-af42-8d6b939df6a5",
+                            ConcurrencyStamp = "fa63e43a-adb3-476b-bf19-9aeda09a465b",
                             Email = "user@example.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "USER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEESiocyG85u6y0yxQQRHL3xq8MScy/PL6DPm4cche0zjBGG6HQTLDdLp02FTnAOieA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEhy3Wczx4jdDAkIMvsVlK65UZg/QgduCuXGQ14AWHxAJOY6tKlDVOplyVD6ZM2lpw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5f9e4f38-74f1-4993-9559-506923d4dc90",
+                            SecurityStamp = "6e38798c-f943-4ed6-a42d-2b476f751f13",
                             TwoFactorEnabled = false,
                             UserName = "user"
                         });
@@ -355,13 +355,13 @@ namespace Lab3___zadanieContextConnection.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "bc236984-8559-4422-a33d-01be3275500a",
-                            RoleId = "180c38ac-6a12-45f5-b671-2697ea09f376"
+                            UserId = "a88f6ee2-210a-4787-81f6-ec5b888fe685",
+                            RoleId = "8de183e9-caef-4dbc-be61-81d78bff5aee"
                         },
                         new
                         {
-                            UserId = "9957226f-91fb-4caf-89aa-e0d356b0a9dc",
-                            RoleId = "9039b191-838f-4d4d-a813-b7a233b688a1"
+                            UserId = "eb1996d4-0cd6-4b12-a208-f8c9cc8dbfe5",
+                            RoleId = "57ec43a7-a1dc-4b2b-bc8b-16842c50c2b3"
                         });
                 });
 
@@ -384,9 +384,9 @@ namespace Lab3___zadanieContextConnection.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AlbumData.Entities.SongEntity", b =>
+            modelBuilder.Entity("Lab3___zadanieContextConnection.Entities.SongEntity", b =>
                 {
-                    b.HasOne("AlbumData.Entities.AlbumEntity", "Album")
+                    b.HasOne("Lab3___zadanieContextConnection.Entities.AlbumEntity", "Album")
                         .WithMany("Songs")
                         .HasForeignKey("AlbumId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -446,7 +446,7 @@ namespace Lab3___zadanieContextConnection.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AlbumData.Entities.AlbumEntity", b =>
+            modelBuilder.Entity("Lab3___zadanieContextConnection.Entities.AlbumEntity", b =>
                 {
                     b.Navigation("Songs");
                 });

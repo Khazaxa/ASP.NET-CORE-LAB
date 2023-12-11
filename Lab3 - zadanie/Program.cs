@@ -11,7 +11,6 @@ using Lab3___zadanieContextConnection;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using Lab3___zadanie.Data;
 using System.Xml.Linq;
 
 namespace Lab3zadanie
