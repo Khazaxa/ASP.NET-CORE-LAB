@@ -1,5 +1,5 @@
 ﻿using Lab3zadanie.Models;
-using AlbumData.Entities;
+using Lab3___zadanieContextConnection.Entities;
 using System.Collections.Generic;
 using System.Linq;
 

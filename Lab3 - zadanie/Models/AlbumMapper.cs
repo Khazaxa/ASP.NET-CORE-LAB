@@ -1,4 +1,4 @@
-﻿using AlbumData.Entities;
+﻿using Lab3___zadanieContextConnection.Entities;
 using Lab3zadanie.Models;
 using System.Linq;
 

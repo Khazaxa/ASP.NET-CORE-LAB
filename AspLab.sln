@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab3zadanie", "Lab3 - zadan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumData", "AlbumData\AlbumData.csproj", "{BA9CBA27-8C0A-487F-9E5F-A743B2894CB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumControllerTests", "AlbumControllerTests\AlbumControllerTests.csproj", "{8ADE11D0-D96A-4B1C-84F8-10B4B41D481E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{BA9CBA27-8C0A-487F-9E5F-A743B2894CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA9CBA27-8C0A-487F-9E5F-A743B2894CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA9CBA27-8C0A-487F-9E5F-A743B2894CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ADE11D0-D96A-4B1C-84F8-10B4B41D481E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ADE11D0-D96A-4B1C-84F8-10B4B41D481E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ADE11D0-D96A-4B1C-84F8-10B4B41D481E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ADE11D0-D96A-4B1C-84F8-10B4B41D481E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

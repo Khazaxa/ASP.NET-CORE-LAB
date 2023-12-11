@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlbumData.Entities
+namespace Lab3___zadanieContextConnection.Entities
 {
     [Table("Albums")]
     public class AlbumEntity

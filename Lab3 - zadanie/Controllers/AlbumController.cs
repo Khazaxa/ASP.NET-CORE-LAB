@@ -1,11 +1,13 @@
 ﻿using Lab3zadanie.Models;
 using Microsoft.AspNetCore.Mvc;
-using AlbumData.Entities;
+using Lab3___zadanieContextConnection.Entities;
 using System.Linq;
-using AlbumData;
+using Lab3___zadanieContextConnection;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Lab3zadanie.Controllers
 {
+    [Authorize]
     public class AlbumController : Controller
     {
         private readonly IAlbumService _albumService;

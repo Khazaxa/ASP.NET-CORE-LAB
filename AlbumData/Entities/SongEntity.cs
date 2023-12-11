@@ -1,8 +1,8 @@
-﻿using AlbumData.Entities;
+﻿using Lab3___zadanieContextConnection.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AlbumData.Entities
+namespace Lab3___zadanieContextConnection.Entities
 {
     [Table("Songs")]
     public class SongEntity
