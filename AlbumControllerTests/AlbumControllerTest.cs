@@ -62,7 +62,7 @@ namespace AlbumControllerTests
             [Fact]
             public void Create_Post_ValidModel_ReturnsRedirectToIndex()
             {
-                var album = new Album { /* Ustaw odpowiednie w³aœciwoœci */ };
+                var album = new Album {};
                 _albumServiceMock.Setup(x => x.Add(It.IsAny<AlbumEntity>()));
 
                 var result = _controller.Create(album);
@@ -74,7 +74,7 @@ namespace AlbumControllerTests
             [Fact]
             public void Create_Post_InvalidModel_ReturnsViewWithModel()
             {
-                var album = new Album { /* Ustaw odpowiednie w³aœciwoœci */ };
+                var album = new Album {};
                 _controller.ModelState.AddModelError("Error", "Model error");
 
                 var result = _controller.Create(album);
@@ -86,10 +86,9 @@ namespace AlbumControllerTests
             [Fact]
             public void DeleteConfirmed_ExistingAlbum_ReturnsRedirectToIndex()
             {
-                // Arrange
                 var albumId = 1;
                 _albumServiceMock.Setup(x => x.FindById(albumId))
-                    .Returns(new AlbumEntity { /* Ustaw odpowiednie w³aœciwoœci */ });
+                    .Returns(new AlbumEntity {});
                 _albumServiceMock.Setup(x => x.Delete(albumId));
 
                 var result = _controller.DeleteConfirmed(albumId);

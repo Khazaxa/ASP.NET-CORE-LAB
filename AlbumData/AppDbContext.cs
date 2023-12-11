@@ -93,12 +93,6 @@ namespace Lab3___zadanieContextConnection
                     UserId = USER_ID
                 });
 
-
-
-
-
-
-
             modelBuilder.Entity<AlbumEntity>()
                 .HasMany(a => a.Songs)
                 .WithOne(s => s.Album)
